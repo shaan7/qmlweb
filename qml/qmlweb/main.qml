@@ -16,5 +16,5 @@ ApplicationWindow {
         anchors.fill: parent
     }
 
-    Component.onCompleted: ComponentCreation.navigate("http://www.shantanutushar.com/qml/Todo.qml")
+    Component.onCompleted: ComponentCreation.navigate("https://raw.githubusercontent.com/shaan7/qmlweb/master/data/Todo.qml")
 }
