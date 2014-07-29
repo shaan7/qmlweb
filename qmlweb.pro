@@ -18,3 +18,6 @@ qtcAddDeployment()
 
 RESOURCES += \
     images.qrc
+
+OTHER_FILES += \
+    qml/qmlweb/BrowserState.qml

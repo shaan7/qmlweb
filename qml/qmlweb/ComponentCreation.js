@@ -7,8 +7,8 @@ function navigate(url) {
 
 function finishCreation() {
     if (component.status == Component.Ready) {
-        var page = component.createObject(stackView);
-        stackView.push(page)
+        var page = component.createObject(stack);
+        stack.push(page)
     } else if (component.status == Component.Error) {
         console.log("Error loading component:", component.errorString());
     }
