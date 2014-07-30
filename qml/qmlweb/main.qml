@@ -4,21 +4,21 @@ import QtQuick.Layouts 1.1
 
 ApplicationWindow {
     title: qsTr("Todo list")
-    width: 320
-    height: 480
+    width: 1024
+    height: 768
 
     BrowserState {
         id: state
         stack: stackView
 
-        url: "https://raw.githubusercontent.com/shaan7/qmlweb/master/data/Todo.qml"
+        url: "https://raw.githubusercontent.com/shaan7/qmlweb/master/data/Grid.qml"
     }
 
     toolBar: RowLayout {
         width: parent.width
 
         ToolBar {
-            ToolButton { iconSource: "qrc:///icons/images/arrow-left.png"; onClicked: stackView.pop() }
+            ToolButton { iconSource: "qrc:///icons/images/arrow-left.png"; onClicked: state.goBack() }
         }
 
         TextField { id: urlBar; Layout.fillWidth: true; text: state.url }
@@ -30,6 +30,8 @@ ApplicationWindow {
 
     StackView {
         id: stackView
+
         anchors.fill: parent
+        clip: true
     }
 }

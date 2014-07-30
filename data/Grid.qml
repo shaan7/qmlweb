@@ -12,10 +12,16 @@ GridView {
     header: Label { text: theGrid.count + " items" }
     delegate: Image {
         property string url_without_size: "http://farm" + farm + ".static.flickr.com/" + server + "/" + id + "_" + secret
-        source: url_without_size + (GridView.isCurrentItem ? "_m.jpg" : "_s.jpg")
+        source: url_without_size + (GridView.isCurrentItem ? ".jpg" : "_s.jpg")
         scale: GridView.isCurrentItem && status == Image.Ready ?  1.2 : 1
         opacity: GridView.isCurrentItem ? 1 : 0.4
         z: GridView.isCurrentItem ? 1 : 0
+
+        ProgressBar {
+                anchors.fill: parent
+                visible: value != 1
+                value: parent.progress
+        }
 
         MouseArea {
             anchors.fill: parent
