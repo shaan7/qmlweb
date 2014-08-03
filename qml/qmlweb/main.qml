@@ -10,8 +10,6 @@ ApplicationWindow {
     BrowserState {
         id: state
         stack: stackView
-
-        url: "https://raw.githubusercontent.com/shaan7/qmlweb/master/data/Grid.qml"
     }
 
     toolBar: RowLayout {
@@ -34,4 +32,6 @@ ApplicationWindow {
         anchors.fill: parent
         clip: true
     }
+
+    Component.onCompleted: state.url = "http://flickr.shaan7.info/Grid.qml"
 }
