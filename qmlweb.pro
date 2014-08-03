@@ -7,7 +7,8 @@ DEPLOYMENTFOLDERS = folder_01
 QML_IMPORT_PATH =
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    mousecursor.cpp
 
 # Installation path
 # target.path =
@@ -21,3 +22,8 @@ RESOURCES += \
 
 OTHER_FILES += \
     qml/qmlweb/BrowserState.qml
+
+HEADERS += \
+    mousecursor.h
+
+CONFIG += c++11
