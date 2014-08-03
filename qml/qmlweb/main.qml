@@ -7,31 +7,30 @@ ApplicationWindow {
     width: 1024
     height: 768
 
-    BrowserState {
-        id: state
-        stack: stackView
+    Browser {
+        id: browser
     }
 
     toolBar: RowLayout {
         width: parent.width
 
         ToolBar {
-            ToolButton { iconSource: "qrc:///icons/images/arrow-left.png"; onClicked: state.goBack() }
+            ToolButton { iconSource: "qrc:///icons/images/arrow-left.png"; onClicked: browser.goBack() }
         }
 
-        TextField { id: urlBar; Layout.fillWidth: true; text: state.url }
+        TextField { id: urlBar; Layout.fillWidth: true; text: browser.url }
 
         ToolBar {
-            ToolButton { iconSource: "qrc:///icons/images/arrow-right.png"; onClicked: state.url = urlBar.text }
+            ToolButton { iconSource: "qrc:///icons/images/arrow-right.png"; onClicked: browser.url = urlBar.text }
         }
     }
 
     StackView {
-        id: stackView
+        id: stack
 
         anchors.fill: parent
         clip: true
     }
 
-    Component.onCompleted: state.url = "http://flickr.shaan7.info/index.qml"
+    Component.onCompleted: browser.url = "http://flickr.shaan7.info/index.qml"
 }

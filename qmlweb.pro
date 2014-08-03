@@ -21,7 +21,7 @@ RESOURCES += \
     images.qrc
 
 OTHER_FILES += \
-    qml/qmlweb/BrowserState.qml
+    qml/qmlweb/Browser.qml
 
 HEADERS += \
     mousecursor.h
