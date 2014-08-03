@@ -33,5 +33,5 @@ ApplicationWindow {
         clip: true
     }
 
-    Component.onCompleted: state.url = "http://flickr.shaan7.info/Grid.qml"
+    Component.onCompleted: state.url = "http://flickr.shaan7.info/index.qml"
 }

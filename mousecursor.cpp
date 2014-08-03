@@ -1,6 +1,7 @@
 #include "mousecursor.h"
 
 #include <QCursor>
+#include <QGuiApplication>
 
 MouseCursor::MouseCursor(QQuickItem *parent) :
     QQuickItem(parent)
@@ -29,7 +30,6 @@ Qt::CursorShape MouseCursor::cursorShape() const
 void MouseCursor::setCursorShape(Qt::CursorShape cursorShape)
 {
     if (m_cursorShape != cursorShape) {
-        qDebug() << "SET CURSOR " << cursorShape;
         m_cursorShape = cursorShape;
         emit cursorShape;
         applyCursor();
@@ -39,7 +39,7 @@ void MouseCursor::setCursorShape(Qt::CursorShape cursorShape)
 void MouseCursor::applyCursor()
 {
     if (m_target) {
-        qDebug() << "APPLY " << m_target << m_cursorShape;
-        m_target->setCursor(m_cursorShape);
+//        m_target->setCursor(m_cursorShape);   FIXME: Why does this not work?
+        static_cast<QGuiApplication*>(QGuiApplication::instance())->setOverrideCursor(m_cursorShape);
     }
 }
